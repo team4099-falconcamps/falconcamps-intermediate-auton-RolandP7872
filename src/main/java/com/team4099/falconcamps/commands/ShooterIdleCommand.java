@@ -8,6 +8,7 @@ public class ShooterIdleCommand extends CommandBase {
 
     public ShooterIdleCommand(Shooter shooter) {
         this.shooter = shooter;
+        this.addRequirements(shooter);
     }
 
     @Override

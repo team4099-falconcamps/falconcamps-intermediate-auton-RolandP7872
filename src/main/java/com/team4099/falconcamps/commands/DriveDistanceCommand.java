@@ -14,6 +14,7 @@ public class DriveDistanceCommand extends CommandBase {
     public DriveDistanceCommand(double distanceMeters, Drivetrain drivetrain) {
         this.distanceMeters = distanceMeters;
         this.drivetrain = drivetrain;
+        this.addRequirements(drivetrain);
     }
     @Override
 public void execute(){
