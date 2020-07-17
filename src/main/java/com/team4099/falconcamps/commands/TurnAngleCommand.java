@@ -5,11 +5,12 @@ import com.team4099.falconcamps.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import io.github.oblarg.oblog.Loggable;
+import io.github.oblarg.oblog.annotations.Log;
 
 public class TurnAngleCommand extends CommandBase implements Loggable {
     private double angleDegrees;
     private Drivetrain drivetrain;
-    private PIDController turnController = new PIDController(0, 0, 0);
+    @Log private PIDController turnController = new PIDController(0, 0, 0);
 
     public TurnAngleCommand(double angleDegrees, Drivetrain drivetrain) {
         this.angleDegrees = angleDegrees;
