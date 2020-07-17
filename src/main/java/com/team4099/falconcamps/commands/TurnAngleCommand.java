@@ -4,8 +4,9 @@ import com.team4099.falconcamps.subsystems.Drivetrain;
 
 import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import io.github.oblarg.oblog.Loggable;
 
-public class TurnAngleCommand extends CommandBase {
+public class TurnAngleCommand extends CommandBase implements Loggable {
     private double angleDegrees;
     private Drivetrain drivetrain;
     private PIDController turnController = new PIDController(0, 0, 0);

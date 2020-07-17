@@ -6,6 +6,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import io.github.oblarg.oblog.annotations.Log;
 
 public class Drivetrain extends SubsystemBase {
     private TalonFX left = new TalonFX(2);
@@ -26,15 +27,18 @@ public class Drivetrain extends SubsystemBase {
         left.set(ControlMode.PercentOutput, leftPower);
         right.set(ControlMode.PercentOutput, rightPower);
     }
+    @Log
     public double leftDistance(){
         return encoderTicksToMeters(left.getSelectedSensorPosition());
         
 
     }
+    @Log
     public double rightDistance(){
         return encoderTicksToMeters(right.getSelectedSensorPosition());
         
     }
+    @Log
     public double getAngle(){
         return gyro.getAngle();
     }
